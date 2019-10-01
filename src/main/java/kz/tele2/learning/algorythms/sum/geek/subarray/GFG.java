@@ -11,17 +11,16 @@ public class GFG {
         int k = 0;
         long sum = 0;
         for (String arg : args) {
-            if (lineNumber++ > 1) {
+            if (lineNumber++ > 0) {
                 if (k == 0) {
                     String[] arrOfStr = arg.split(" ");
                     sum = Long.valueOf(arrOfStr[1]);
                 }
                 if (k == 1) {
-                    String[] arrOfStr = arg.split(" ");
-                    process(arrOfStr, sum);
+                    process(arg.split(" "), sum);
                 }
                 k += 1;
-                if (k == 2) {
+                if (k > 1) {
                     k = 0;
                 }
             }
@@ -53,6 +52,12 @@ public class GFG {
             i++;
         }
         return -1;
+    }
+
+    private static void printArr(String arr[])  {
+        for (String item: arr)  {
+            System.out.print(item + " ");
+        }
     }
 
 }
